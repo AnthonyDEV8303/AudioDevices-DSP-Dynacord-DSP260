@@ -1,0 +1,101 @@
+; Installation inf for the DYNACORD DSP-260 USB driver
+;
+; (c) Copyright 2007 Sanewave Inc.
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%EV%
+DriverVer=10/07/2011,6.1.7600.16385
+CatalogFile.NTx86 = dsp260x86.cat
+
+[SourceDisksNames]
+1="DYNACORD DSP 260 Installation Disk",,,
+
+[SourceDisksFiles]
+dsp260usb.sys = 1
+dsp260usb.inf = 1
+
+[Manufacturer]
+%EV%=Microsoft,NTx86
+
+; For Win2K
+[Microsoft]
+%USB\VID_045E&PID_930A.DeviceDesc%=dsp260usb.Dev, USB\VID_0562&PID_DC01
+%USB\VID_045E&PID_930A.DeviceDesc%=dsp260usb.Dev, USB\VID_03EB&PID_6124
+
+; For XP and later
+[Microsoft.NTx86]
+%USB\VID_045E&PID_930A.DeviceDesc%=dsp260usb.Dev, USB\VID_0562&PID_DC01
+%USB\VID_045E&PID_930A.DeviceDesc%=dsp260usb.Dev, USB\VID_03EB&PID_6124
+
+
+;[PreCopySection]
+;HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+dsp260usb.Files.Ext = 10,System32\Drivers
+dsp260usb.Files.Inf = 10,INF
+
+[dsp260usb.Dev]
+CopyFiles=dsp260usb.Files.Ext
+AddReg=dsp260usb.AddReg
+
+[dsp260usb.Dev.NT]
+CopyFiles=dsp260usb.Files.Ext
+AddReg=dsp260usb.AddReg
+
+[dsp260usb.Dev.NT.Services]
+Addservice = dsp260usb, 0x00000002, dsp260usb.AddService
+
+[dsp260usb.AddService]
+DisplayName    = %dsp260usb.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\dsp260usb.sys
+LoadOrderGroup = Base
+
+[dsp260usb.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,dsp260usb.sys
+HKLM,"System\Currentcontrolset\Services\dsp260usb\Parameters","MaximumTransferSize",0x10001,4096
+HKLM,"System\Currentcontrolset\Services\dsp260usb\Parameters","DebugLevel",0x10001,2
+
+
+[dsp260usb.Files.Ext]
+dsp260usb.sys
+
+;-------------- WDF Coinstaller installation
+[DestinationDirs]
+CoInstaller_CopyFiles = 11
+
+[dsp260usb.Dev.NT.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01009.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01009.dll=1 ; make sure the number matches with SourceDisksNames
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[dsp260usb.Dev.NT.Wdf]
+KmdfService = dsp260usb, dsp260usb_wdfsect
+
+[dsp260usb_wdfsect]
+KmdfLibraryVersion = 1.9
+
+;---------------------------------------------------------------;
+
+[Strings]
+EV="Dynacord"
+MfgName="DYNACORD"
+USB\VID_045E&PID_930A.DeviceDesc="DYNACORD DSP-260"
+dsp260usb.SvcDesc="dsp260usb.Sys DYNACORD DSP-260 USB"
+
