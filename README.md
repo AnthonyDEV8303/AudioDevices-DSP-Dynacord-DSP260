@@ -17,14 +17,15 @@ Ideal for Windows 10/11 x64 users and developers who want to customize or rebuil
 
 ---
 
-## Installation
+  ## Installation
 
-1. Go to the [Releases](https://github.com/AnthonyDEV8303/AudioDevices-DSP-Dynacord-DSP260/releases) section.  
-2. Download the latest installer `.exe`.  
-3. Run the installer and follow the on-screen instructions.  
-4. Enjoy your Dynacord DSP260 driver!  
+1. Connect your Dynacord DSP260 device to your PC via USB.  
+2. Go to the [Releases](https://github.com/AnthonyDEV8303/AudioDevices-DSP-Dynacord-DSP260/releases) section.  
+3. Download the latest installer `.exe`.  
+4. Run the installer and follow the on-screen instructions.  
+5. Enjoy your Dynacord DSP260 driver!  
 
-> ⚠️ Make sure to run the installer with administrator privileges.  
+> ⚠️ Make sure to run the installer with administrator privileges and that the DSP device is connected via USB before starting the installation.
 
 ---
 
