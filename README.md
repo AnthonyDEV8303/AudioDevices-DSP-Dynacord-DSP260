@@ -10,4 +10,4 @@ Windows 10/11 x64 adaption easy driver install
  
  enjoy :-)
  
- anthonyDEV8303@protonmail.com
+ anthonydev8303@protonmail.com
