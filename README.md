@@ -1,5 +1,5 @@
 # AudioDevices-DSP-Dynacord-DSP260
-windows 10 adaption easy driver install
+Windows 10/11 x64 adaption easy driver install
 
 
  Open .iss script and edit with inno setup complier, after rename the file path .ico with another
