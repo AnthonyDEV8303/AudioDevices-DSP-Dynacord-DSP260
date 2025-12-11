@@ -1,13 +1,37 @@
-# AudioDevices-DSP-Dynacord-DSP260
-Windows 10/11 x64 adaption easy driver install
+# Dynacord DSP260 Audio Driver for Windows 10/11 x64
 
+[![Release](https://img.shields.io/github/v/release/AnthonyDEV8303/AudioDevices-DSP-Dynacord-DSP260)](https://github.com/AnthonyDEV8303/AudioDevices-DSP-Dynacord-DSP260/releases) 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Windows](https://img.shields.io/badge/OS-Windows%2010%2F11%20x64-green)]()
 
- Open .iss script and edit with inno setup complier, after rename the file path .ico with another
-  edit *DriverPath "C:\Users\Anthony\Desktop\Drivers"* and insert your file path in their folder "basedriverx64"
+This repository contains a ready-to-use installer and source files for the Dynacord DSP260 audio driver.  
+Ideal for Windows 10/11 x64 users and developers who want to customize or rebuild the installer using Inno Setup.
 
- 
- ...and build up the script
- 
- enjoy :-)
- 
- anthonydev8303@protonmail.com
+---
+
+## Features
+- Easy driver installation for Windows 10/11 x64  
+- Source files included for customization  
+- Fully editable Inno Setup script (.iss)  
+- Compatible with DSP Dynacord DSP260 devices  
+
+---
+
+## Installation
+
+1. Go to the [Releases](https://github.com/AnthonyDEV8303/AudioDevices-DSP-Dynacord-DSP260/releases) section.  
+2. Download the latest installer `.exe`.  
+3. Run the installer and follow the on-screen instructions.  
+4. Enjoy your Dynacord DSP260 driver!  
+
+> ⚠️ Make sure to run the installer with administrator privileges.  
+
+---
+
+## Rebuilding / Customizing the Installer
+
+1. Open the `.iss` script in [Inno Setup](https://jrsoftware.org/isinfo.php) compiler.  
+2. Rename the `.ico` file path if needed.  
+3. Edit the `DriverPath` entry:
+   ```text
+   DriverPath "C:\Users\Anthony\Desktop\Drivers"
